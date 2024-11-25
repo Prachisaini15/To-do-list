@@ -1,0 +1,241 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .todo-container {
+    background: #fff;
+    width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  h1 {
+    color: #1f1f1f;
+    margin-bottom: 20px;
+  }
+  
+  /* Header Styles */
+  .todo-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  #task-input {
+    flex-grow: 1;
+    border: 1px solid #d9d9d9;
+    border-radius: 20px;
+    padding: 10px 15px;
+    outline: none;
+    font-size: 14px;
+  }
+  
+  #add-btn {
+    background-color: #ff5845;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  #add-btn:hover {
+    opacity: 0.9;
+  }
+  
+  /* List Styles */
+  #todo-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: none;
+  }
+  
+  .todo-item {
+    display:flex;
+    align-items:left;
+  
+    justify-content:space-between; 
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border: 1px solid #d9d9d9;
+    border-radius: 10px;
+    background: #fff;
+    position: relative;
+  }
+  
+  .todo-item.completed .task-text {
+    text-decoration: line-through;
+    color: #d9d9d9;
+  }
+  
+  /* Ellipsis Menu Styles */
+  .menu-icon {
+    cursor: pointer;
+    text-align: right;
+    font-size: 20px;
+    color: #888;
+  }
+  
+  .task-menu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 15px;
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    width: 100px;
+  }
+  
+  .task-menu button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: none;
+    border: none;
+    color: #ff5845;
+    text-align: left;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .task-menu button:hover {
+    background-color: #f4f4f4;
+  }
+  
+  /* Show menu when active */
+  .todo-item .menu-icon.active + .task-menu {
+    display: block;
+  }
+  
+  .head{
+      display: flex;
+  }
+  
+  .group {
+   display: flex;
+   line-height: 28px;
+   align-items: center;
+   position: relative;
+   max-width: 190px;
+  }
+  
+  .input {
+   width: 100%;
+   height: 40px;
+   line-height: 28px;
+   padding: 0 1rem;
+   padding-left: 2.5rem;
+   border: 2px solid transparent;
+   border-radius: 1000px;
+   outline: none;
+   background-color: #f3f3f4;
+   color: #22180c;
+   margin-left: 30px;
+   transition: .3s ease;
+  }
+  
+  .input::placeholder {
+   color: #9e9ea7;
+  }
+  
+  .input:focus, input:hover {
+   outline: none;
+   border-color: rgba(234,76,137,0.4);
+   background-color: #fff;
+   box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
+  }
+  
+  .icon {
+   position: absolute;
+   left: 1rem;
+   margin-left: 30px;
+   fill: #9e9ea7;
+   width: 1rem;
+   height: 1rem;
+  }
+  /* Circle styles */
+  .completion-circle {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #d9d9d9;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  
+  .completion-circle.completed-circle {
+    background-color: #ff5845;
+    border-color: #ff5845;
+  }
+  
+  .todo-item.completed .task-text {
+    text-decoration: line-through;
+    color: #d9d9d9;
+  }
+  
+  /* Input container styling */
+  .input-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 20px;
+  }
+  
+  .input-container input {
+    width: 100%;
+    padding: 10px 60px 10px 15px; /* Extra padding for the button */
+    font-size: 16px;
+    border: 1px solid #d9d9d9;
+    border-radius: 30px;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  
+  .input-container input:focus {
+    border-color: #ff5845;
+  }
+  
+  .input-container button {
+    position: absolute;
+    right: 10px;
+    height: 80%;
+    padding: 5px 15px;
+    background-color: #ff5845;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .input-container button:hover {
+    background-color: #e44b3a;
+  }
+  
+  .input-container button:active {
+    background-color: #c53e30;
+  }
+  
